@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qvizi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navigacia">
+            <!-- Button to Open the Modal -->
+            <button type="button" class="menu btn-registration btn text-light border-white" data-bs-toggle="modal"
+                data-bs-target="#myModal">
+                MENU <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal Heading</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-binder">
+                                <h4 class="mb-3">Billing address</h4>
+                                <form class="needs-validation" novalidate="">
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <label for="firstName" class="form-label">First name</label>
+                                            <input type="text" class="form-control" id="firstName" placeholder=""
+                                                value="" required="">
+                                            <div class="invalid-feedback">
+                                                Valid first name is required.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label for="lastName" class="form-label">Last name</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder=""
+                                                value="" required="">
+                                            <div class="invalid-feedback">
+                                                Valid last name is required.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="username" class="form-label">Username</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text">@</span>
+                                                <input type="text" class="form-control" id="username"
+                                                    placeholder="Username" required="">
+                                                <div class="invalid-feedback">
+                                                    Your username is required.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="email" class="form-label">Email <span
+                                                    class="text-body-secondary">(Optional)</span></label>
+                                            <input type="email" class="form-control" id="email"
+                                                placeholder="you@example.com">
+                                            <div class="invalid-feedback">
+                                                Please enter a valid email address for shipping updates.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="address" class="form-label">Address</label>
+                                            <input type="text" class="form-control" id="address"
+                                                placeholder="1234 Main St" required="">
+                                            <div class="invalid-feedback">
+                                                Please enter your shipping address.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="address2" class="form-label">Address 2 <span
+                                                    class="text-body-secondary">(Optional)</span></label>
+                                            <input type="text" class="form-control" id="address2"
+                                                placeholder="Apartment or suite">
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <label for="country" class="form-label">Country</label>
+                                            <select class="form-select" id="country" required="">
+                                                <option value="">Choose...</option>
+                                                <option>United States</option>
+                                                <option>Georgia</option>
+                                                <option>England</option>
+                                                <option>Germany</option>
+                                                <option>Finland</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a valid country.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="state" class="form-label">State</label>
+                                            <select class="form-select" id="state" required="">
+                                                <option value="">Choose...</option>
+                                                <option>California</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid state.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label for="zip" class="form-label">Zip</label>
+                                            <input type="text" class="form-control" id="zip" placeholder="" required="">
+                                            <div class="invalid-feedback">
+                                                Zip code required.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="same-address">
+                                        <label class="form-check-label" for="same-address">Shipping address is the same
+                                            as my billing
+                                            address</label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="save-info">
+                                        <label class="form-check-label" for="save-info">Save this information for next
+                                            time</label>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <h4 class="mb-3">Payment</h4>
+
+                                    <div class="my-3">
+                                        <div class="form-check">
+                                            <input id="credit" name="paymentMethod" type="radio"
+                                                class="form-check-input" checked="" required="">
+                                            <label class="form-check-label" for="credit">Credit card</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input"
+                                                required="">
+                                            <label class="form-check-label" for="debit">Debit card</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input id="paypal" name="paymentMethod" type="radio"
+                                                class="form-check-input" required="">
+                                            <label class="form-check-label" for="paypal">PayPal</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row gy-3">
+                                        <div class="col-md-6">
+                                            <label for="cc-name" class="form-label">Name on card</label>
+                                            <input type="text" class="form-control" id="cc-name" placeholder=""
+                                                required="">
+                                            <small class="text-body-secondary">Full name as displayed on card</small>
+                                            <div class="invalid-feedback">
+                                                Name on card is required
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="cc-number" class="form-label">Credit card number</label>
+                                            <input type="text" class="form-control" id="cc-number" placeholder=""
+                                                required="">
+                                            <div class="invalid-feedback">
+                                                Credit card number is required
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label for="cc-expiration" class="form-label">Expiration</label>
+                                            <input type="text" class="form-control" id="cc-expiration" placeholder=""
+                                                required="">
+                                            <div class="invalid-feedback">
+                                                Expiration date required
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label for="cc-cvv" class="form-label">CVV</label>
+                                            <input type="text" class="form-control" id="cc-cvv" placeholder=""
+                                                required="">
+                                            <div class="invalid-feedback">
+                                                Security code required
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to
+                                        checkout</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <h1>W-D-A</h1>
+            <!-- Button to Open the Modal -->
+            <button type="button" class="menu btn-contact-us btn text-light border-white" data-bs-toggle="modal"
+                data-bs-target="#contactUsModal">
+                CONTACT US
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal" id="contactUsModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Contact Us</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="form-binder">
+                                <form class="needs-validation" novalidate="">
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <label for="firstName" class="form-label">First name</label>
+                                            <input type="text" class="form-control" id="firstName" placeholder=""
+                                                value="" required="">
+                                            <div class="invalid-feedback">
+                                                Valid first name is required.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label for="lastName" class="form-label">Last name</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder=""
+                                                value="" required="">
+                                            <div class="invalid-feedback">
+                                                Valid last name is required.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email"
+                                                placeholder="you@example.com" required="">
+                                            <div class="invalid-feedback">
+                                                Please enter a valid email address.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="subject" class="form-label">Subject</label>
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                                required="">
+                                            <div class="invalid-feedback">
+                                                Please enter a subject.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="message" class="form-label">Message</label>
+                                            <textarea class="form-control" id="message"
+                                                placeholder="Your message here..." required=""></textarea>
+                                            <div class="invalid-feedback">
+                                                Please enter your message.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <button class="w-100 btn btn-primary btn-lg" type="submit">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <main class="main">
+        <div class="container p-5 mt-5">
+            <div class="row box1 gy-5 pb-5">
+                <div class="col-md-4 col-12 d-flex justify-content-center align-items-center">
+                    <div class="content1 text-center">
+                        <p>2. interior design</p>
+                        <i>Abu Dhaby</i>
+                        <h1>Skyscraper</h1>
+                        <div><span class="styled-text">Learn more</span></div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-12">
+                    <img class="w-100" src="skyscraperKithcen.webp">
+                </div>
+            </div>
+            <div class="row gy-5 mt-5">
+                <div class="col-md-3 col-6">
+                    <div class="card-first p-2">
+                        <div class="card-body d-flex justify-content-between border-0">
+                            <i class="fa-solid fa-user-nurse"></i>
+                            <span>1</span>
+                        </div>
+                        <div class="card-footer border-0 mt-5">
+                            <b>Project analysis</b>
+                            <p class="mt-3">since the 1980s, as the complexity of buildings began to increase, the field
+                                of architecht become multi-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card-first p-2">
+                        <div class="card-body d-flex justify-content-between border-0">
+                            <i class="fa-solid fa-user-nurse"></i>
+                            <span>2</span>
+                        </div>
+                        <div class="card-footer border-0 mt-5">
+                            <b>Project analysis</b>
+                            <p class="mt-3">since the 1980s, as the complexity of buildings began to increase, the field
+                                of architecht become multi-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card-first p-2">
+                        <div class="card-body d-flex justify-content-between border-0">
+                            <i class="fa-solid fa-user-nurse"></i>
+                            <span>3</span>
+                        </div>
+                        <div class="card-footer border-0 mt-5">
+                            <b>Project analysis</b>
+                            <p class="mt-3">since the 1980s, as the complexity of buildings began to increase, the field
+                                of architecht become multi-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="card-last p-2">
+                        <div class="card-body d-flex justify-content-between border-0">
+                            <i class="fa-solid fa-user-nurse"></i>
+                            <span>4</span>
+                        </div>
+                        <div class="card-footer border-0 mt-5">
+                            <b>Project analysis</b>
+                            <p class="mt-3">since the 1980s, as the complexity of buildings began to increase, the field
+                                of architecht become multi-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer bg-black text-light">
+            <div class="container-fluid">
+                <div class="row gy-4">
+                    <div class="col-md-4 col-4 end d-flex align-items-center justify-content-center">
+                        <div class="footer-text">
+                            <p>2021 Hub. All are for demo purpose only.</p>
+                            <p>info@liquid-theme.com</p>
+                        </div>
+                    </div>
+                    <div class="end col-md-4 col-4 footer-text2 d-flex align-items-center justify-content-center">
+                        <h1>W-D-A</h1>
+                    </div>
+                    <div class="end col-md-4 col-4 d-flex align-items-center justify-content-center">
+                        <div class="links  d-flex gap-3">
+                            <div class="Pinterest text-light p-2">
+                                <a href="https://www.pinterest.com/">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 496 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path
+                                        d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3 .8-3.4 5-20.3 6.9-28.1 .6-2.5 .3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z" />
+                                </svg>
+                                </a>
+                            </div>
+                            <div class="Twitter text-light p-2">
+                                <a href="https://x.com/">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path
+                                        d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z" />
+                                </svg>
+                                </a>
+                            </div>
+                            <div class="Instagram text-light p-2">
+                                <a href="https://www.instagram.com/">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path
+                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

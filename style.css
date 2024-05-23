@@ -1,0 +1,96 @@
+body{
+    margin:0;
+}
+header{
+    background-color: black;
+    display:flex;
+    justify-content:center;
+}
+.navigacia .menu{
+    border-radius:35px!important;
+}
+.navigacia{
+    background-color: black;
+    padding-left: 20px;
+    padding-right:20px;
+    height:20px;
+    width:100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigacia .button1{
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    color:white;
+    border-radius: 35px;
+    border: 1px solid white;
+}
+.navigacia h1{
+    color:white;
+}
+.navigacia .button2{
+    height: 50px;
+    background-color: black;
+    color:white;
+    border-radius: 35px;
+    border: 1px solid white;
+}
+.main .content1 i{
+    font-size: 30px;
+}
+.main .content1 .styled-text{
+    border-bottom:1px solid black;
+}
+.card-first{
+    border-right:1px solid gray;
+}
+.box1{
+    border-bottom:1px solid gray;
+}
+.Pinterest{
+    border-radius:50%;
+    background-color:white;
+    width:50px;
+    height:50px;
+    border:1px solid white;
+
+}
+.Twitter{
+    border-radius:50%;
+    background-color:white;
+    width:50px;
+    height:50px;
+    border:1px solid white;
+
+}
+.Instagram{
+    border-radius:50%;
+    background-color:white;
+    width:50px;
+    height:50px;
+    border:1px solid white;
+}
+.end{
+    border-right:1px solid white;
+    border-top:1px solid white;
+}
+@media screen and (max-width: 668px){
+    .footer .footer-text p{
+        font-size: 12px;
+    }
+    .Twitter,.Pinterest,.Instagram{ 
+        width:30px;
+        height:30px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .links svg{
+        width:16px;
+        height:16px
+    }
+}
